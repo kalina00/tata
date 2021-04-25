@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавление</title>
+</head>
+<body class="bg-light">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Заполните форму для добавления продукта</h4>
+                <form method="post">
+                    <label>Название продукта:</label>
+                    <input name="Product" type="text" class="form-control">
+
+
+                    <div class="form-group">
+                        <label>Для какого типа диабета подходит:</label>
+                        <select class="custom-select" name="IDDiabetes">
+                            <option value="1">Для 1 типа</option>
+                            <option value="2">Для 2 типа</option>
+                            <option value="3">Для Обоих</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="col">
+                            <label>Ккал на 100г:</label>
+                            <input name="kkal" type="number" class="form-control is-invalid">
+                            <div class="invalid-feedback">
+                                Поле должно быть заполнено!
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label>ХЕ в 100 г:</label>
+                            <input name="XE" type="number" step="0.01" class="form-control is-invalid">
+                            <div class="invalid-feedback">
+                                Поле должно быть заполнено!
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <label>Хотите добавить свой продукт?</label>
+                    <input class="btn btn-info btn-lg btn-block" type="submit" value="Добавить продукт" />
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+</html>

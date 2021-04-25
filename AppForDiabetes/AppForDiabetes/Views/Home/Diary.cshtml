@@ -1,0 +1,38 @@
+﻿@*@model AppForDiabetes.Models.Humans
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Информация</title>
+</head>
+<body>
+
+    <h3>Продукты</h3>
+
+
+
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>kkal</td>
+            <td>XE</td>
+            <td></td>
+        </tr>
+
+      
+        {
+            <tr>
+                <p>@Humans.eight</p>
+                <p>@product.kkal</p>
+                <p>@product.XE</p>
+                <p><a href="~/Home/Корзинабудет/@product.IDProduct">Выбрать</a></p>
+            </tr>
+        }
+
+    </table>
+    <label>Хотите добавить свой продукт?</label>
+    <a class="btn-outline-info" asp-controller="Home" asp-action="AddProduct">Добавить продукт</a>
+
+</body>
+</html>*@

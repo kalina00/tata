@@ -1,0 +1,86 @@
+﻿@model AppForDiabetes.Models.Humans
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+</head>
+<body>
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+   
+
+    <div class="row">
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Заполните форму для регистрации</h4>
+            <form method="post" asp-controller="Account" asp-action="Registr">
+                <div class="validation" asp-validation-summary="ModelOnly"></div>
+                <div>
+                    <label>Имя:</label>
+                    <input name="Name" type="text" class="form-control">
+                    <span style="color:brown" asp-validation-for="Name"></span>
+                </div>
+
+                <label>Пол:</label>
+                <div class="form-check">
+                    <input class="form-check-input" value="False" name="IsWoman" type="radio" checked>
+                    <label class="form-check-label" for="male">Мужчина</label>
+                </div>
+                <div class="form-check">
+                    <input name="IsWoman" type="radio" value="True" class="form-check-input">
+                    <label class="form-check-label" for="female">Женщина</label>
+                </div>
+
+                <div class="form-row">
+                    <div class="col">
+                        <label for="Age">Возраст :</label>
+                        <input name="Age" type="number" class="form-control">
+                        <span style="color:brown" asp-validation-for="Age"></span>
+                    </div>
+                    <div class="col">
+                        <label for="Weigt">Вес:</label>
+                        <input name="Weigt" type="number" class="form-control">
+                        <span style="color:brown" asp-validation-for="Weigt"></span>
+
+
+                    </div>
+                    <div class="col">
+                        <label for="Height">Рост:</label>
+                        <input name="Height" type="number" class="form-control">
+                        <span style="color:brown" asp-validation-for="Height"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Тип Диабета</label>
+                    <select class="custom-select" name="IDDiabetes">
+                        <option value="1">1 Тип</option>
+                        <option value="2">2 Тип</option>
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="Login">Логин</label>
+                    <input name="Login" type="text" class="form-control ">
+                    <span style="color:brown" asp-validation-for="Login"></span>
+                </div>
+                <div class="form-group">
+                    <lab6el for="Password">Пароль</lab6el>
+                    <input name="Password" type="text" class="form-control">
+                    <span style="color:brown" asp-validation-for="Password"></span>
+                </div>
+
+
+
+                <input class="btn btn-info btn-lg btn-block" type="submit" value="Сохранить" />
+            </form>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

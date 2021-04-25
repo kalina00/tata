@@ -1,0 +1,87 @@
+﻿@model IEnumerable<AppForDiabetes.Models.Products>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Каталог продуктов";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Продукты</title>
+</head>
+<body>
+
+    <h3>Каталог Продуктов</h3>
+
+
+    <form method="get">
+        <div class="form-inline form-group">
+            <label class="control-label">Название продукта: </label>
+            <input name="Product" class="form-control" />
+
+            @*<label class="control-label">Компания: </label>
+            <select name="company" asp-items="Model.Companies" class="form-control"></select>*@
+
+            <input type="submit" value="Фильтр" class="btn btn-default" />
+        </div>
+    </form>
+    <table class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>Ккал 100 г </th>
+            <th>XE в 100 г</th>
+            <th></th>
+
+        </tr>
+
+        @foreach (var product in Model)
+        {
+            
+            <tr>
+                <td>@product.Product</td>
+                <td>@product.kkal</td>
+                <td>@product.XE</td>
+                <td>
+                    <a href="~/Home/Корзинабудет/@product.IDProduct">Выбрать</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+    <label>Хотите добавить свой продукт?</label>
+    <a class="btn-outline-info" asp-controller="Home" asp-action="AddProduct">Добавить продукт</a>
+
+</body>
+</html>
+
+
+@*<h2>Каталог пользователей</h2>
+
+<form method="get">
+    <div class="form-inline form-group">
+        <label class="control-label">Имя: </label>
+        <input name="name" class="form-control" />
+
+        <label class="control-label">Компания: </label>
+        <select name="company" asp-items="Model.Companies" class="form-control"></select>
+
+        <input type="submit" value="Фильтр" class="btn btn-default" />
+    </div>
+</form>
+
+<table class="table table-striped">
+    <tr>
+        <th>Имя</th>
+        <th>Возраст</th>
+        <th>Компания</th>
+    </tr>
+
+    @foreach (var item in Model.Users)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Age</td>
+            <td>@item.Company.Name</td>
+        </tr>
+    }
+</table>*@

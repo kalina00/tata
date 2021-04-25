@@ -1,0 +1,33 @@
+﻿@model IEnumerable<AppForDiabetes.Models.Recipes>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+   
+    <title>Рецепты</title>
+</head>
+<body>
+
+    <h3>Рецепты</h3>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>CookingMethod</td>
+            <td></td>
+        </tr>
+        @foreach (var recipes in Model)
+        {
+            <tr>
+                <td>@recipes.Recipe</td>
+                <td>@recipes.CookingMethod</td>
+                              
+                <td><a href="~/Home/Buy/@recipes.IDRecipe">Информация</a></td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
